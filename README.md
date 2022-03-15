@@ -40,8 +40,14 @@ This example will deploy EVPN underlay configuration and the sample overlay netw
 #### Step 1: Switch Disovery & Switch Role Assignment
 The main.tf in subdirectory **Underlay** will perform the switch discovery of the 4 Nexus 9000v and assign them the role of "Border Gateway" with **"preserve config"** set to **false**. Depending on CML2 environment, this step may take up to more than 30 minutes to complete.
 
+Figure 3. Switches are added and being rebooted
+![image](https://user-images.githubusercontent.com/8743281/158391516-f848d2db-8ee6-4227-ae26-023bc517c2b0.png)
+
 #### Step 2: Go to the NDFC UI to perform vpc pairing for these 2 pairs of Border Gateway
 In next release, this step will be removed with automation.
+
+Figure 4. vPC pairing the 2 pairs of Border Gateway switches
+![image](https://user-images.githubusercontent.com/8743281/158410253-faa0e0a8-e2f1-445d-86d0-70a202c9455c.png)
 
 #### Step 3: Run the Python Recalculate.py to recalculate and deploy the configuration to the 4 switches
 python3 Recalculate.py <name of the Multi-Site fabric> 
@@ -49,11 +55,18 @@ python3 Recalculate.py <name of the Multi-Site fabric>
 ### Sample Overlay
 The main.tf in subdirectory **Overaly-sample** will perform 3 actions:
 1. Change the interface Ethernet1/4 of all 4 BGWs to switchport mode access
+ ![image](https://user-images.githubusercontent.com/8743281/158412849-2b4b1a39-dd3c-4fc0-b432-e81d9d18ae17.png)
+
+ Figure 5. Use REST API call in Terraform to make the interface change
+ 
 2. Provision a VRF named "Tenant-B" and associate with all 4 BGWs; perform a recalculate-and-deploy to commit the change.
 3. Provision a Network named "Web-Network" with an anycast gateway "192.168.1.1/24" and associate the Ethernet1/4 of switches A1 and B2 where 2 Ubuntu VMs are attached.
 
 ## Expected Result
-Data traffic between the 2 Ubuntu VMs will be through with the overlay network provisioned.
+Data traffic between the 2 Ubuntu VMs will flow through the overlay network provisioned.
+
+Figure 6. Overlay network provisioned
+![image](https://user-images.githubusercontent.com/8743281/158412220-1928bcb8-f11c-4eca-a08d-9dd9107c5a85.png)
 
 ## Usage
 
