@@ -7,6 +7,7 @@ This project is derived from a previous project: https://github.com/philiwon8868
 NDFC can work with both physical Cisco Nexus Switches and Virtual ones provided by Cisco Modeling Labs 2 ([CML2](https://www.cisco.com/c/en/us/products/cloud-systems-management/modeling-labs/index.html))
 
 In this example, a sample CML2 lab is setup with 2 pairs of VPC Border Gateways (VPC-BGWs) interconnecting to simulate a multi-site EVPN fabric as shown below
+<img width="574" alt="image" src="https://user-images.githubusercontent.com/8743281/158382324-617b083e-99a7-4ada-a6c6-8583acbf5f16.png">
 
 
 The sample ACI application environment is a typical 3-Tier "web-app-db", leveraging ACI contracts and L4-L7 service graph with a Cisco Firepower Threat Defense (FTD) Virtual Device to govern their communication policies. The FTD devie will be managed by Cisco Firepower Management Center (FMC). FMC has Terraform provider support which allows us to push policies to FMC console, at which security operator can deploy to the target FTD devices.
