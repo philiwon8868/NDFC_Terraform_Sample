@@ -1,10 +1,13 @@
 # NDFC_Terraform_Sample
 
-This is an example on how to use [Terraform](https://www.terraform.io) and REST API to automate Cisco Nexus Dashboard Fabric Controller ([NDFC](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/prime-data-center-network-manager/nb-06-ndfc-ds-cte-en.html)) provisioning of EVPN underlay and overlay.
+This is an example on how to use [Terraform](https://www.terraform.io) and REST API to automate Cisco Nexus Dashboard Fabric Controller ([NDFC](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/prime-data-center-network-manager/nb-06-ndfc-ds-cte-en.html)) for provisioning VXLAN EVPN underlay and overlay.
 
+This project is derived from a previous project: https://github.com/philiwon8868/terraform-aci. It is a working sample for those who would like to leverage on NDFC's Terraform integration to experience the power of "Infrastructure As Code".
 
+NDFC can work with both physical Cisco Nexus Switches and Virtual ones provided by Cisco Modeling Labs 2 ([CML2](https://www.cisco.com/c/en/us/products/cloud-systems-management/modeling-labs/index.html))
 
-This project is derived from a previous project: https://github.com/philiwon8868/terraform-aci. It is a working sample for those who would like to leverage on ACI's Terraform integration to experience the power of "Infrastructure As Code".
+In this example, a sample CML2 lab is setup with 2 pairs of VPC Border Gateways (VPC-BGWs) interconnecting to simulate a multi-site EVPN fabric as shown below
+
 
 The sample ACI application environment is a typical 3-Tier "web-app-db", leveraging ACI contracts and L4-L7 service graph with a Cisco Firepower Threat Defense (FTD) Virtual Device to govern their communication policies. The FTD devie will be managed by Cisco Firepower Management Center (FMC). FMC has Terraform provider support which allows us to push policies to FMC console, at which security operator can deploy to the target FTD devices.
 
