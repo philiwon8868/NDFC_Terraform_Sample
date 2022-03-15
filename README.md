@@ -4,9 +4,7 @@ This is an example on how to use [Terraform](https://www.terraform.io) and REST 
 
 This project is derived from a previous project: https://github.com/philiwon8868/terraform-aci. It is a working sample for those who would like to leverage on NDFC's Terraform integration to experience the power of "Infrastructure As Code".
 
-NDFC can work with both physical Cisco Nexus Switches and Virtual ones provided by Cisco Modeling Labs 2 ([CML2](https://www.cisco.com/c/en/us/products/cloud-systems-management/modeling-labs/index.html))
-
-In this example, a sample CML2 lab environment is setup with 2 pairs of VPC Border Gateways (VPC-BGWs) interconnecting to simulate a multi-site EVPN fabric as shown below
+In this example, a sample Cisco Modeling Labs 2 ([CML2](https://www.cisco.com/c/en/us/products/cloud-systems-management/modeling-labs/index.html)) lab environment is setup with 2 pairs of VPC Border Gateways (VPC-BGWs) interconnecting to simulate a multi-site EVPN fabric as shown below
 
 Figure 1: Logical Diagram of the Multi-Site VXLAN EVPN
 <img width="574" alt="image" src="https://user-images.githubusercontent.com/8743281/158382324-617b083e-99a7-4ada-a6c6-8583acbf5f16.png">
