@@ -35,7 +35,7 @@ NDFC | >= 1.2.0
 This example will deploy EVPN underlay configuration and the sample overlay network in 2 separate flows:
 
 ### EVPN Underlay  
-#### Step 1: Switch Disovery & Switch Role Assignment
+#### Step 1: Switch Discovery & Switch Role Assignment
 The main.tf in subdirectory **Underlay** will perform the switch discovery of the 4 Nexus 9000v and assign them the role of "Border Gateway" with **"preserve config"** set to **false**. Depending on CML2 environment, this step may take up to more than 30 minutes to complete.
 
 Figure 3. Switches are added and being rebooted
